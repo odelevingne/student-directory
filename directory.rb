@@ -24,10 +24,11 @@ def print_header
 end
 
 def print_students(students)
-  students.each_with_index do |student, index|
-    if student[:name].length <= 12  
-    puts "#{index + 1} #{student[:name]} (#{student[:cohort]} cohort)"
-  end
+    number = students.length
+    index = 0
+    while index < number
+    puts "#{index + 1} #{students[index][:name]} (#{students[index][:cohort]} cohort)"
+    index += 1
   end
 end
 
@@ -41,3 +42,7 @@ students = input_students # this sets the variable students as the method 'input
 print_header
 print_students(students)
 print_footer(students)
+
+
+#students.each_with_index do |student, index|
+ #   if student[:name].length <= 12  
