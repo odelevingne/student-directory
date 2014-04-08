@@ -25,10 +25,10 @@ end
 
 def print_students(students)
     number = students.length
-    index = 0
-    while index < number
-    puts "#{index + 1} #{students[index][:name]} (#{students[index][:cohort]} cohort)"
-    index += 1
+    counter = 0
+    until counter >= number
+    puts "#{counter + 1} #{students[counter][:name]} (#{students[counter][:cohort]} cohort)"
+    counter += 1
   end
 end
 
