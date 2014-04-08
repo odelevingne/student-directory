@@ -30,12 +30,12 @@ def input_students
   # create an empty array
   students = []
   # get the first name
-  name = gets.chomp
+  name = gets.chomp.to_sym
   # while the name is not empty, repear this code
   while !name.empty? do
     # add the student hash to the array
   puts "Which cohort are you in?".center(100)
-  cohort = gets.chomp
+  cohort = gets.chomp.to_sym
     students << {:name => name, :cohort => cohort}
     puts "Now we have #{students.length} students".center(100)
     # get another name from the user
@@ -71,6 +71,8 @@ students = input_students # this sets the variable students as the method 'input
 print_header
 print_students(students)
 print_footer(students)
+
+print "#{students.to_s}"
 
 
 #students.each_with_index do |student, index|
