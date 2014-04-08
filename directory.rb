@@ -24,18 +24,22 @@ students = [
 
 
 def input_students
-  puts "Please enter the names of the students"
-    puts "To finish, just hit return twice"
+  puts "We need some information from you".center(100)
+  puts "Please enter the names of the students".center(100)
+    puts "To finish, just hit return twice".center(100)
   # create an empty array
   students = []
   # get the first name
   name = gets.chomp
   # while the name is not empty, repear this code
   while !name.empty? do
-    # add teh student hash to the array
-    students << {:name => name, :cohort => :march}
-    puts "Now we have #{students.length} students"
+    # add the student hash to the array
+  puts "Which cohort are you in?".center(100)
+  cohort = gets.chomp
+    students << {:name => name, :cohort => cohort}
+    puts "Now we have #{students.length} students".center(100)
     # get another name from the user
+    puts "Please input another name or hit return to finish".center(100)
     name = gets.chomp
   end 
   # return the array of student
@@ -44,26 +48,26 @@ end
 
 
 def print_header
-  puts "The students of my cohort at Makers Academy"
-  puts "---------"
+  puts "The students of my cohort at Makers Academy".center(100, "~~~~")
+  puts "---------".center(100)
 end
 
 def print_students(students)
     number = students.length
     counter = 0
     until counter >= number
-    puts "#{counter + 1} #{students[counter][:name]} (#{students[counter][:cohort]}) cohort #{students[counter][:gender]}"
+    puts "#{counter + 1} #{students[counter][:name]} (#{students[counter][:cohort]}) cohort #{students[counter][:gender]}".center(100)
     counter += 1
   end
 end
 
 
 def print_footer(names)
-puts "Overall, we have #{names.length} great students"
+puts "Overall, we have #{names.length} great students".center(100)
 end 
 
 # nothing happens until we call the methods
-students # = input_students # this sets the variable students as the method 'input_students'. This variable then gets used in the following methods.
+students = input_students # this sets the variable students as the method 'input_students'. This variable then gets used in the following methods.
 print_header
 print_students(students)
 print_footer(students)
