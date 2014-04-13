@@ -72,7 +72,6 @@ print_header
 print_students(students)
 print_footer(students)
 
-print "#{students.to_s}"
 
 
 #students.each_with_index do |student, index|
