@@ -56,7 +56,7 @@ def print_students(students)
     number = students.length
     counter = 0
     until counter >= number
-    puts "#{counter + 1} #{students[counter][:name]} (#{students[counter][:cohort]}) cohort #{students[counter][:gender]}".center(100)
+    puts "#{counter + 1} #{students[counter][:name]} #{students[counter][:cohort]}".center(100)
     counter += 1
   end
 end
@@ -68,33 +68,37 @@ end
 
 
 def interactive_menu
-  loop do 
-    # 1. print the menu and ask the user what to do
-    "1. Input the students"
-    "2. Show the students"
-    "9. Exit"
-  # 1. print the menu and ask the user what to do
-  # 2. read the input and save it into a variable
-  selection = gets.chomp
-  # 3. do what the user has asked
-  case selection
-  when "1"
-    # input the students
-  when "2"
-    # show the students
-  when "9"
-    exit # this will cause the prgram to terminate
-  else 
-    puts "I don't know what you meant, try again"
+    students = []
+    loop do 
+      # 1. print the menu and ask the user what to do
+      puts "1. Input the students".center(100)
+      puts "2. Show the students".center(100)
+      puts "9. Exit".center(100)
+      # 2. read the input and save it into a variable
+      selection = gets.chomp
+      # 3. do what the user has asked
+    case selection
+    when "1"
+      students = input_students
+     when "2"
+      print_header
+      print_students(students)
+      print_footer(students)
+    when "9"
+      exit # this will cause the prgram to terminate
+    else 
+    puts "I don't know what you meant, try again".center(100)
   end
+ end
 end
 
+interactive_menu
 
 # nothing happens until we call the methods
-students = input_students # this sets the variable students as the method 'input_students'. This variable then gets used in the following methods.
-print_header
-print_students(students)
-print_footer(students)
+# students = input_students # this sets the variable students as the method 'input_students'. This variable then gets used in the following methods.
+# print_header
+# print_students(students)
+# print_footer(students)
 
 
 
