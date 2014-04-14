@@ -1,28 +1,3 @@
-students = [
-            {:name => "Steve Musgrave", :cohort => :March, :gender => "male"},
-            {:name => "Sroop Sunar", :cohort => :March, :gender => "female"},
-            {:name => "Colin Marshall", :cohort => :March, :gender => "male"},
-            {:name => "Josh Fail-Brown", :cohort => :March, :gender => "male"},
-            {:name => "Louise Lai", :cohort => :March, :gender => "female"},
-            {:name => "Robin Doble", :cohort => :March, :gender => "male"},
-            {:name => "Alex Wong", :cohort => :March, :gender => "male"},
-            {:name => "Scott Dimmock", :cohort => :March, :gender => "male"},
-            {:name => "Muhanad Al-Rubaiee", :cohort => :March, :gender => "male"},
-            {:name => "Shelley Hope", :cohort => :March, :gender => "female"},
-            {:name => "Will Hall", :cohort => :March, :gender => "male"},
-            {:name => "Oliver Delevingne", :cohort => :March, :gender => "male"},
-            {:name => "Nico", :cohort => :March, :gender => "male"},
-            {:name => "Apostolis", :cohort => :March, :gender => "male"},
-            {:name => "Stefania", :cohort => :March, :gender => "female"},
-            {:name => "Robert Leon", :cohort => :March, :gender => "male"},
-            {:name => "Emma Williams", :cohort => :March, :gender => "female"},
-            {:name => "Joey Wolf", :cohort => :March, :gender => "male"},
-            {:name => "Julie Walker", :cohort => :March, :gender => "female"},
-  ]
-  
-
-
-
 def input_students
   puts "We need some information from you".center(100)
   puts "Please enter the names of the students".center(100)
@@ -47,6 +22,19 @@ def input_students
 end
 
 
+def print_menu
+  puts "1. Input the students".center(100)
+  puts "2. Show the students".center(100)
+  puts "9. Exit".center(100)
+end
+
+def show_students
+  print_header
+  print(students)
+  print_footer(students)
+end
+
+
 def print_header
   puts "The students of my cohort at Makers Academy".center(100, "~~~~")
   puts "---------".center(100)
@@ -65,7 +53,6 @@ end
 def print_footer(names)
 puts "Overall, we have #{names.length} great students".center(100)
 end 
-
 
 def interactive_menu
     students = []
